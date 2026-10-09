@@ -87,58 +87,6 @@
       </div>
 
 
-      <!-- MENU DU BAS : MOBILE ET TABLETTE -->
-      <div class="fixed bottom-0 left-0 z-50 w-full bg-white border-t border-gray-200 shadow-lg lg:hidden">
-
-         <div class="grid grid-cols-6 items-center py-2">
-
-            <!-- DASHBOARD -->
-            <a href="dashboard.php"
-               class="flex flex-col items-center justify-center gap-1 py-2 text-[#DD3333] hover:bg-red-50">
-               <i class="fa-solid fa-house text-lg"></i>
-               <span class="text-[9px] sm:text-xs">Accueil</span>
-            </a>
-
-            <!-- FILIERES -->
-            <a href="filiere.php"
-               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
-               <i class="fa-solid fa-book-open-reader text-lg"></i>
-               <span class="text-[9px] sm:text-xs">Filières</span>
-            </a>
-
-            <!-- NIVEAUX -->
-            <a href="niveaux.php"
-               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
-               <i class="fa-solid fa-layer-group text-lg"></i>
-               <span class="text-[9px] sm:text-xs">Niveaux</span>
-            </a>
-
-            <!-- CLASSES -->
-            <a href="classes.php"
-               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
-               <i class="fa-solid fa-chalkboard text-lg"></i>
-               <span class="text-[9px] sm:text-xs">Classes</span>
-            </a>
-
-            <!-- ETUDIANTS -->
-            <a href="etudiants.php"
-               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
-               <i class="fa-solid fa-graduation-cap text-lg"></i>
-               <span class="text-[9px] sm:text-xs">Étudiants</span>
-            </a>
-
-            <!-- STATISTIQUES -->
-            <a href="statistiques.php"
-               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
-               <i class="fa-solid fa-chart-line text-lg"></i>
-               <span class="text-[9px] sm:text-xs">Stats</span>
-            </a>
-
-         </div>
-
-      </div>
-
-
 
       <!-- CONTENU PRINCIPALE DE LA PAGE -->
       <div class="w-full lg:w-[80%]  h-screen lg:ml-64 flex flex-col ">
