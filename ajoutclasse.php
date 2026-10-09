@@ -10,24 +10,25 @@
 
 </head>
 
-<body class="bg-[#F9FAFB] overflow-hidden font-['Arial'] tracking-wide">
+<body class="bg-[#F9FAFB] overflow-hidden tracking-wide">
    <!-- Div parent -->
    <div class="w-[100%]">
 
       <!-- Sidebar -->
 
-      <div class="fixed top-0 z-40 w-[20%] h-[552px] bg-[#DD3333] flex flex-col justify-between text-white ">
+      <div class="fixed top-0 z-40 w-[20%] h-[552px] bg-[#DD3333] flex flex-col justify-between text-white hidden lg:block ">
 
          <!-- LOGO -->
 
-         <div class="border-b border-red-400/50 mt-2">
+         <div class="border-b border-red-400/50 mt-3.5">
             <div class=" m-2 ml-5">
-               <h1 class="text-[25px] font-bold">E221</h1>
-               <p class="text-xs text-red-100 ">Ecole Supérieure Professionnelle</p>
+               <h1 class="text-[20px] lg:text-[25px]  font-bold">E221</h1>
+               <p class="text-[10px] lg:text-[12px] text-red-100 ">Ecole Supérieure Professionnelle</p>
             </div>
          </div>
 
-         <div class=" p-2 mt-4 w-[90%] h-full mx-auto ">
+         <div class=" p-2 mt-2 pt-4 w-[90%] h-[402px] mx-auto border border-red-300">
+
 
             <!-- menu -->
             <div class=" space-y-2">
@@ -73,11 +74,14 @@
 
          <div class="border-b border-red-400/50 "></div>
 
-         <a href=""
-            class=" mb-3 mt-3 flex px-7 py-2 gap-6 mx-auto items-center border border-red-300 rounded-sm hover:bg-red-700 text-sm font-regular ">
-            <span class="ml-8">Déconnexion</span>
-            <i class="fa-solid fa-arrow-right-from-bracket text-sm w-5"></i>
-         </a>
+         <div class="w-[85%] mx-auto">
+
+            <a href=""
+               class=" mb-3 mt-3 flex px-7 py-2 gap-6 mx-auto items-center border border-red-300 rounded-sm hover:bg-red-700 text-sm font-regular ">
+               <span class="ml-8">Déconnexion</span>
+               <i class="fa-solid fa-arrow-right-from-bracket text-sm w-5"></i>
+            </a>
+         </div>
 
 
       </div>
@@ -93,7 +97,7 @@
                <!-- Rechercher -->
                <div class=" relative  w-[40%] h-auto">
                   <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-gray-600 text-xs"></i>
-                  <input type="text" class="w-[80%] pl-14 pr-3 py-2.5 bg-gray-400/20 font-medium border border-gray-600/20 rounded-full text-xs"
+                  <input type="text" class="w-[80%] pl-14 pr-3 py-2.5 bg-gray-400/20 font-regular border border-gray-600/20 rounded-full text-xs"
                      placeholder="Rechercher...">
                </div>
 
