@@ -27,7 +27,7 @@
             </div>
          </div>
 
-         <div class=" p-2 mt-2 pt-4 w-[90%] h-[402px] mx-auto border border-red-300">
+         <div class=" p-2 mt-2 pt-4 w-[90%] h-[402px] mx-auto">
 
 
             <!-- menu -->
@@ -87,23 +87,32 @@
 
 
       <!-- CONTENU PRINCIPALE DE LA PAGE -->
-      <div class="w-[80%] ml-64 h-[1440px] ">
+      <div class="w-full lg:w-[80%]   h-screen lg:ml-64 flex flex-col">
 
          <!-- HEADER -->
-         <div class="sticky top-0 z-40 shadow-sm bg-white w-full h-[78px] border-b border-gray-400/40">
-            <div class=" w-[90%] h-full mx-auto justify-between items-center flex">
+         <div class="sticky top-0 z-40 shadow-sm bg-white w-full min-h-[78px] border-b border-gray-400/40">
+            <div class=" w-[90%] min-h-[78px] gap-2 mx-auto justify-between items-center flex">
+
+               <!-- LOGO -->
+
+               <div class=" lg:hidden">
+                  <div>
+                     <h1 class="text-[20px] text-[#DD3333] font-bold">E221</h1>
+                     <p class="text-[9px] text-[#DD3333] ">Ecole Supérieure Professionnelle</p>
+                  </div>
+               </div>
 
                <!-- Rechercher -->
-               <div class=" relative  w-[40%] h-auto">
+               <div class=" relative  w-[40%] h-auto hidden lg:block">
                   <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-gray-600 text-xs"></i>
-                  <input type="text" class="w-[80%] pl-14 pr-3 py-2.5 bg-gray-400/20 font-regular border border-gray-600/20 rounded-full text-xs"
+                  <input type="text" class="w-[80%] focus:outline focus:outline-[#DD3333] focus:ring-0 focus:border-none pl-14 pr-3 py-2.5 bg-gray-400/20 font-regular border border-gray-600/20 rounded-full text-xs"
                      placeholder="Rechercher...">
                </div>
 
 
                <!-- notification et profil de l'utilisateur -->
-               <div class="flex items-center  gap-3 w-[21%] h-[50px]">
-                  <!-- cloche de notification -->
+               <div class="flex items-center justify-end gap-2 sm:gap-3 w-[21%] h-[50px] ">
+                  <!-- notification -->
                   <div class="relative cursor-pointer p-1.5  rounded-full">
                      <i class="fa-regular fa-bell text-[16px]"></i>
                      <span
@@ -113,12 +122,12 @@
                   </div>
                   <div class="border-r border-gray-300 h-9"></div>
 
-                  <!-- photo et nom de l'utilisateur -->
+                  <!-- utilisateur -->
                   <div class="flex items-center gap-3 cursor-pointer">
-                     <div class="w-10 h-10 rounded-full object-cover bg-red-500/20">
+                     <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-full object-cover bg-red-500/20">
                         <i class="fa-regular fa-user text-[#DD3333] text-[14px] flex  justify-center mt-3"></i>
                      </div>
-                     <div>
+                     <div class="hidden lg:block">
                         <p class="text-[14px] font-bold text-gray-800 leading-none">Admin</p>
                         <p class="text-[12px]  text-gray-600 mt-0.5">Secrétariat</p>
                      </div>
@@ -127,6 +136,529 @@
                </div>
 
             </div>
+
+         </div>
+
+         <!-- CONTENU -->
+
+         <div class="flex-1 min-h-0 overflow-y-auto ">
+
+            <div class="w-[90%] mx-auto mt-8 mb-24 lg:mb-8">
+               <!--TITRE -->
+               <div class=" flex justify-between items-center">
+
+                  <div>
+                     <h2 class="text-[16px] lg:text-[23px] font-bold text-gray-900">
+                        Filières
+                     </h2>
+
+                     <p class="mt-1 text-[10px] lg:text-[14px] text-gray-500">
+                        Gestion des filières de l'établissement.
+                     </p>
+                  </div>
+
+                  <a href="ajoutfiliere.php" class="bg-[#DD3333] hover:bg-[#870202] text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                     <i class="fa-solid fa-plus w-3"></i>
+                     <p>Ajouter une filière</p>
+                  </a>
+               </div>
+
+               <!-- Rechercher -->
+               <div class="mt-5 relative">
+                  <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-gray-600 text-xs"></i>
+                  <input type="text" class="w-[80%] lg:w-[40%] pl-14 pr-3 py-2 lg:py-2.5 focus:outline focus:outline-[#DD3333] focus:ring-0 focus:border-none bg-white shadow-sm font-regular border border-gray-600/20 rounded-full text-xs"
+                     placeholder="Rechercher une filière...">
+               </div>
+
+               <div class="mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+
+                  <!-- Cards 1 -->
+                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                     <!-- Icon + code -->
+                     <div class="mb-4 flex items-center justify-between">
+
+                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+
+                           <i class="fa-solid fa-code text-sm"></i>
+
+                        </div>
+
+                        <span class="rounded-md bg-red-50 px-3 py-1 text-xs font-semibold text-[#DD3333]">
+                           DEV-WEB
+                        </span>
+
+                     </div>
+
+                     <!-- Nom -->
+                     <h3 class="text-[16px] lg:text-[18px] font-bold text-gray-900">
+                        Développement Web
+                     </h3>
+                     <!-- texte + image -->
+                     <div class=" mt-4 flex justify-between items-center ">
+
+                        <!-- TEXTES -->
+                        <div class="w-[50%]">
+                           <!-- Responsable -->
+                           <div>
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Responsable
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-700">
+                                 M. Cheikh Diop
+                              </p>
+                           </div>
+
+
+                           <!-- Nombre étudiants -->
+                           <div class="mt-3">
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Étudiants
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-800">
+                                 154 étudiants
+                              </p>
+                           </div>
+                        </div>
+                        <!-- images -->
+                        <div class="w-[30%] lg:w-[35%] h-[92px] rounded-md overflow-hidden">
+                           <img src="image/devw.jpg" alt="" class="object-center ">
+                        </div>
+                     </div>
+
+
+                     <!-- Boutons -->
+                     <div class="mt-5 flex gap-2">
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Voir
+                        </button>
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333]  px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Modifier
+                        </button>
+
+                     </div>
+                  </div>
+
+                  <!-- Cards 2 -->
+                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                     <!-- Icon + code -->
+                     <div class="mb-4 flex items-center justify-between">
+
+                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+
+                           <i class="fa-solid fa-network-wired text-sm"></i>
+
+                        </div>
+
+                        <span class="rounded-md bg-red-50 px-3 py-1 text-xs font-semibold text-[#DD3333]">
+                           RES-INFO
+                        </span>
+
+                     </div>
+
+
+                     <!-- Nom -->
+                     <h3 class="text-[16px] lg:text-[18px] font-bold text-gray-900">
+                        Réseaux Informatiques
+                     </h3>
+                     <!-- texte + image -->
+                     <div class=" mt-4 flex justify-between items-center ">
+
+                        <!-- TEXTES -->
+                        <div class="w-[50%] ">
+                           <!-- Responsable -->
+                           <div>
+
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Responsable
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-700">
+                                 Mme Ndeye Fall
+                              </p>
+
+                           </div>
+
+
+                           <!-- Nombre étudiants -->
+                           <div class="mt-3">
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Étudiants
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-800">
+                                 132 étudiants
+                              </p>
+                           </div>
+                        </div>
+                        <!-- images -->
+                        <div class="w-[30%] lg:w-[35%] h-[92px] rounded-md overflow-hidden">
+                           <img src="image/Res.jpg" alt="" class="object-center ">
+                        </div>
+                     </div>
+
+
+                     <!-- Boutons -->
+                     <div class="mt-5 flex gap-2">
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Voir
+                        </button>
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333]  px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Modifier
+                        </button>
+
+                     </div>
+                  </div>
+
+                  <!-- Cards 3 -->
+                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                     <!-- Icon + code -->
+                     <div class="mb-4 flex items-center justify-between">
+
+                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+
+                           <i class="fa-solid fa-palette text-sm"></i>
+
+                        </div>
+
+                        <span class="rounded-md bg-red-50 px-3 py-1 text-xs font-semibold text-[#DD3333]">
+                           DES-GRA
+                        </span>
+
+                     </div>
+
+
+                     <!-- Nom -->
+                     <h3 class="text-[16px] lg:text-[18px] font-bold text-gray-900">
+                        Designe graphique
+                     </h3>
+                     <!-- texte + image -->
+                     <div class=" mt-4 flex justify-between items-center ">
+
+                        <!-- TEXTES -->
+                        <div class="w-[40%]">
+                           <!-- Responsable -->
+                           <div>
+
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Responsable
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-700">
+                                 M. Ibrahima Ba
+                              </p>
+
+                           </div>
+
+
+                           <!-- Nombre étudiants -->
+                           <div class="mt-3">
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Étudiants
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-800">
+                                 98 étudiants
+                              </p>
+                           </div>
+                        </div>
+                        <!-- images -->
+                        <div class="w-[30%] lg:w-[35%] h-[92px] rounded-md overflow-hidden">
+                           <img src="image/des.jpg" alt="" class="object-center ">
+                        </div>
+                     </div>
+
+
+                     <!-- Boutons -->
+                     <div class="mt-5 flex gap-2">
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Voir
+                        </button>
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333]  px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Modifier
+                        </button>
+
+                     </div>
+                  </div>
+
+                  <!-- Cards 4 -->
+                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                     <!-- Icon + code -->
+                     <div class="mb-4 flex items-center justify-between">
+
+                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+
+                           <i class="fa-solid fa-laptop-code text-sm"></i>
+
+                        </div>
+
+                        <span class="rounded-md bg-red-50 px-3 py-1 text-xs font-semibold text-[#DD3333]">
+                           GEN-LOG
+                        </span>
+
+                     </div>
+
+
+                     <!-- Nom -->
+                     <h3 class="text-[16px] lg:text-[18px] font-bold text-gray-900">
+                        Génie Logiciel
+                     </h3>
+                     <!-- texte + image -->
+                     <div class=" mt-4 flex justify-between items-center ">
+
+                        <!-- TEXTES -->
+                        <div class="w-[50%]">
+                           <!-- Responsable -->
+                           <div>
+
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Responsable
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-700">
+                                 M. Mamadou Kane
+                              </p>
+
+                           </div>
+
+
+                           <!-- Nombre étudiants -->
+                           <div class="mt-3">
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Étudiants
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-800">
+                                 76 étudiants
+                              </p>
+                           </div>
+                        </div>
+                        <!-- images -->
+                        <div class="w-[30%] lg:w-[35%] h-[92px] rounded-md overflow-hidden">
+                           <img src="image/gen.jpg" alt="" class="object-center ">
+                        </div>
+                     </div>
+
+
+                     <!-- Boutons -->
+                     <div class="mt-5 flex gap-2">
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Voir
+                        </button>
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333]  px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Modifier
+                        </button>
+
+                     </div>
+                  </div>
+
+                  <!-- Cards 5 -->
+                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                     <!-- Icon + code -->
+                     <div class="mb-4 flex items-center justify-between">
+
+                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+
+                           <i class="fa-solid fa-bullhorn text-sm"></i>
+
+                        </div>
+
+                        <span class="rounded-md bg-red-50 px-3 py-1 text-xs font-semibold text-[#DD3333]">
+                           MAR-COM
+                        </span>
+
+                     </div>
+
+
+                     <!-- Nom -->
+                     <h3 class="text-[16px] lg:text-[17px] font-bold text-gray-900">
+                        Marketing & Communication
+                     </h3>
+                     <!-- texte + image -->
+                     <div class=" mt-4 flex justify-between items-center ">
+
+                        <!-- TEXTES -->
+                        <div class="w-[50%]">
+                           <!-- Responsable -->
+                           <div>
+
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Responsable
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-700">
+                                 Mme Aissatou Sow
+                              </p>
+
+                           </div>
+
+
+                           <!-- Nombre étudiants -->
+                           <div class="mt-3">
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Étudiants
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-800">
+                                 56 étudiants
+                              </p>
+                           </div>
+                        </div>
+                        <!-- images -->
+                        <div class="w-[30%] lg:w-[35%] h-[92px] rounded-md overflow-hidden">
+                           <img src="image/mark.jpg" alt="" class="object-center ">
+                        </div>
+                     </div>
+
+
+                     <!-- Boutons -->
+                     <div class="mt-5 flex gap-2">
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Voir
+                        </button>
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333]  px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Modifier
+                        </button>
+
+                     </div>
+                  </div>
+
+                  <!-- Cards 6 -->
+                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                     <!-- Icon + code -->
+                     <div class="mb-4 flex items-center justify-between">
+
+                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+
+                           <i class="fa-solid fa-chart-pie text-sm"></i>
+
+                        </div>
+
+                        <span class="rounded-md bg-red-50 px-3 py-1 text-xs font-semibold text-[#DD3333]">
+                           DAT-ANA
+                        </span>
+
+                     </div>
+
+
+                     <!-- Nom -->
+                     <h3 class="text-[16px] lg:text-[18px] font-bold text-gray-900">
+                        Data analyst
+                     </h3>
+                     <!-- texte + image -->
+                     <div class=" mt-4  flex justify-between items-center ">
+
+                        <!-- TEXTES -->
+                        <div class="w-[40%] ">
+                           <!-- Responsable -->
+                           <div>
+
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Responsable
+                              </p>
+
+                              <p class="mt-1 text-[13px] font-semibold text-gray-700">
+                                 M. Ousmane Sy
+                              </p>
+
+                           </div>
+
+
+                           <!-- Nombre étudiants -->
+                           <div class="mt-3">
+                              <p class="text-xs font-medium uppercase text-gray-400">
+                                 Étudiants
+                              </p>
+
+                              <p class="mt-1 text-sm font-semibold text-gray-800">
+                                 32 étudiants
+                              </p>
+                           </div>
+                        </div>
+                        <!-- images -->
+                        <div class="w-[30%] lg:w-[35%] h-[94px] rounded-md overflow-hidden">
+                           <img src="image/data.jpg" alt="" class="object-center ">
+                        </div>
+                     </div>
+
+
+                     <!-- Boutons -->
+                     <div class="mt-5 flex gap-2">
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Voir
+                        </button>
+
+                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333]  px-3 py-2 text-xs font-medium text-gray-700 transition hover:border-e221 hover:text-e221">
+                           Modifier
+                        </button>
+
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+
+            <!-- footer -->
+            <footer class="mt-8 bg-white p-6 border-t border-gray-300 hidden lg:block text-xs text-gray-500 shadow-lg ">
+               <p class=" w-[185px] mx-auto ">© 2026 E221 — Gestion scolaire</p>
+            </footer>
+         </div>
+
+
+      </div>
+
+      <!-- MENU DU BAS -->
+      <div class="fixed bottom-0 left-0 z-50 w-full bg-white border-t border-gray-200 shadow-lg lg:hidden">
+
+         <div class="grid grid-cols-6 items-center py-2">
+
+            <a href="dashboard.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-house text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Dashboard</span>
+            </a>
+
+            <a href="filiere.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-book-open-reader text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Filières</span>
+            </a>
+
+            <a href="niveaux.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-layer-group text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Niveaux</span>
+            </a>
+
+            <a href="classes.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-chalkboard text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Classes</span>
+            </a>
+
+            <a href="etudiants.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-graduation-cap text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Étudiants</span>
+            </a>
+
+            <a href="statistiques.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-chart-line text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Statistiques</span>
+            </a>
 
          </div>
 

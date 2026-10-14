@@ -27,7 +27,7 @@
             </div>
          </div>
 
-         <div class=" p-2 mt-2 pt-4 w-[90%] h-[402px] mx-auto border border-red-300">
+         <div class=" p-2 mt-2 pt-4 w-[90%] h-[402px] mx-auto ">
 
 
             <!-- menu -->
@@ -87,15 +87,26 @@
       </div>
 
 
+
+
       <!-- CONTENU PRINCIPALE DE LA PAGE -->
-      <div class="w-[80%] ml-64 h-[1440px] ">
+      <div class="w-full lg:w-[80%]  h-screen lg:ml-64 flex flex-col ">
 
          <!-- HEADER -->
-         <div class="sticky top-0 z-40 shadow-sm bg-white w-full h-[78px] border-b border-gray-400/40">
-            <div class=" w-[90%] h-full mx-auto justify-between items-center flex">
+         <div class="sticky top-0 z-40 shadow-sm bg-white w-full min-h-[78px] border-b border-gray-400/40">
+            <div class=" w-[90%] min-h-[78px] gap-2 mx-auto justify-between items-center flex">
+
+               <!-- LOGO -->
+
+               <div class=" lg:hidden">
+                  <div>
+                     <h1 class="text-[20px] text-[#DD3333] font-bold">E221</h1>
+                     <p class="text-[9px] text-[#DD3333] ">Ecole Supérieure Professionnelle</p>
+                  </div>
+               </div>
 
                <!-- Rechercher -->
-               <div class=" relative  w-[40%] h-auto">
+               <div class=" relative  w-[40%] h-auto hidden lg:block">
                   <i class="fa-solid fa-magnifying-glass absolute left-6 top-1/2 -translate-y-1/2 text-gray-600 text-xs"></i>
                   <input type="text" class="w-[80%] pl-14 pr-3 py-2.5 bg-gray-400/20 font-regular border border-gray-600/20 rounded-full text-xs"
                      placeholder="Rechercher...">
@@ -103,8 +114,8 @@
 
 
                <!-- notification et profil de l'utilisateur -->
-               <div class="flex items-center  gap-3 w-[21%] h-[50px]">
-                  <!-- cloche de notification -->
+               <div class="flex items-center justify-end gap-2 sm:gap-3 w-[21%] h-[50px] ">
+                  <!-- notification -->
                   <div class="relative cursor-pointer p-1.5  rounded-full">
                      <i class="fa-regular fa-bell text-[16px]"></i>
                      <span
@@ -114,12 +125,12 @@
                   </div>
                   <div class="border-r border-gray-300 h-9"></div>
 
-                  <!-- photo et nom de l'utilisateur -->
+                  <!-- utilisateur -->
                   <div class="flex items-center gap-3 cursor-pointer">
-                     <div class="w-10 h-10 rounded-full object-cover bg-red-500/20">
+                     <div class="w-9 h-9 lg:w-10 lg:h-10 rounded-full object-cover bg-red-500/20">
                         <i class="fa-regular fa-user text-[#DD3333] text-[14px] flex  justify-center mt-3"></i>
                      </div>
-                     <div>
+                     <div class="hidden lg:block">
                         <p class="text-[14px] font-bold text-gray-800 leading-none">Admin</p>
                         <p class="text-[12px]  text-gray-600 mt-0.5">Secrétariat</p>
                      </div>
@@ -131,8 +142,253 @@
 
          </div>
 
+         <!-- CONTENU -->
+         <div class="flex-1 min-h-0 overflow-y-auto ">
+
+            <div class="w-[90%] mx-auto mt-8 mb-24 lg:mb-8">
+               <!--TITRE -->
+               <div>
+                  <div class="flex items-center gap-2">
+                     <a href="etudiants.php">
+                        <i class="fa-solid fa-chevron-left w-3 text-sm md:text-md hover:text-[#DD3333] cursor-pointer"></i>
+                     </a>
+                     <h2 class="text-[16px] lg:text-[23px] font-bold text-gray-900">
+                        Ajouter un étudiant
+                     </h2>
+
+                  </div>
+                  <p class="mt-1 ml-5 text-[12px] lg:text-[14px] text-gray-500">
+                     Enregistrez les informations d'un nouvel étudiant.
+                  </p>
+               </div>
+
+               <!-- formulaire -->
+               <div class="mt-5 bg-white py-5 rounded-xl border border-gray-300 ">
+                  <!-- icone + TEXTE -->
+                  <div class="flex px-5 gap-4 md:gap-5 lg:gap-6  items-center">
+                     <!-- ICONE -->
+                        <div class="flex h-11 w-11 items-center justify-center border border-green-200 rounded-lg bg-green-50 text-green-600">
+                           <i class="fa-solid fa-graduation-cap ml-0.5 text-sm w-5"></i>
+                        </div>
+
+                     <!-- TEXTE -->
+                     <div class=" flex flex-col gap-1 ">
+                        <p class="text-[14px] lg:text-[16px] font-bold ">
+                           Informations de l'étudiant
+                        </p>
+
+                        <p class="text-[10px] whitespace-nowrap md:text-[12px] lg:text-[14px] font-regular text-gray-500">
+                           Renseignez les informations demandées.
+                        </p>
+
+                     </div>
+                  </div>
+                  <div class="border border-gray-200 mt-5"></div>
+
+                  <form action="submit">
+                     <div class="px-5 mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-1">
+                        <!-- Code -->
+                        <div>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Matricule
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <input
+                              class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
+                              type="text" placeholder="Ex : E2210548"><br><br>
+                        </div>
+                        <!-- Nom -->
+                        <div>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Nom
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <input
+                              class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
+                              type="text" placeholder="Ex : Diop"><br><br>
+                        </div>
+
+                        <!-- Prénom -->
+                        <div>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Prénom
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <input
+                              class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
+                              type="text" placeholder="Ex : Awa"><br><br>
+                        </div>
+
+                        <!-- Date de naissance -->
+                        <div>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Date de naissance
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <input
+                              class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
+                              type="date" placeholder="Ex : 12/06/03"><br><br>
+                        </div>
+
+                        <!-- Select filiere -->
+                        <div>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Sexe
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <select name="filière" id="" class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                              <option value="Tous les niveaux">Sélectionner un sexe</option>
+                              <option value="1">F</option>
+                              <option value="2">M</option>
+                           </select>
+                        </div>
+
+                        <!-- Téléphone -->
+                        <div>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Téléphone
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <input
+                              class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
+                              type="tel" placeholder="Ex : 77 846 46 74"><br><br>
+                        </div>
+
+                     </div>
+
+                     <!-- Adresse  -->
+                     <div class="px-5 mt-3">
+                        <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Adresse 
+                           <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                        </label><br>
+                        <input
+                           class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
+                           type="text" placeholder="Ex : Dakar"> <br><br>
+                     </div>
+
+                     <!-- Select Classe -->
+                     <div class="px-5 mt-2">
+                        <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Classe
+                           <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                        </label><br>
+                        <select name="niveaux" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                           <option value="Tous les niveaux">Sélectionner une classe</option>
+                           <option value="L1">L1 DEV-WEB</option>
+                           <option value="L1">L2 DEV-WEB</option>
+                           <option value="L1">L3 DEV-WEB</option>
+                           <option value="L1">M1 DEV-WEB</option>
+                           <option value="L1">M2 DEV-WEB</option>
+                           <option value="L1">L1 RES-INFO</option>
+                           <option value="L1">L2 RES-INFO</option>
+                           <option value="L1">L3 RES-INFO</option>
+                           <option value="L1">M1 RES-INFO</option>
+                           <option value="L1">M2 RES-INFO</option>
+                           <option value="L1">L1 GEN-LOG</option>
+                           <option value="L1">L2 GEN-LOG</option>
+                           <option value="L1">L3 GEN-LOG</option>
+                           <option value="L1">M1 GEN-LOG</option>
+                           <option value="L1">M2 GEN-LOG</option>
+                           <option value="L1">L1 DES-GRA</option>
+                           <option value="L1">L2 DES-GRA</option>
+                           <option value="L1">L3 DES-GRA</option>
+                           <option value="L1">M1 DES-GRA</option>
+                           <option value="L1">M2 DES-GRA</option>
+                           <option value="L1">L1 MAR-COM</option>
+                           <option value="L1">L2 MAR-COM</option>
+                           <option value="L1">L3 MAR-COM</option>
+                           <option value="L1">M1 MAR-COM</option>
+                           <option value="L1">M2 MAR-COM</option>
+                           <option value="L1">L1 DAT-ANA</option>
+                           <option value="L1">L2 DAT-ANA</option>
+                           <option value="L1">L3 DAT-ANA</option>
+                           <option value="L1">M1 DAT-ANA</option>
+                           <option value="L1">M2 DAT-ANA</option>
+                        </select>
+                     </div>
+
+                     <!-- Buttons -->
+                     <div class="flex justify-end mt-8  gap-3 px-5">
+                        <a href="ajoutetud.php" class=" border border-gray-400 hover:border-red-400 text-gray-600 hover:text-[#DD3333] whitespace-nowrap flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                           <i class="fa-solid fa-xmark w-3"></i>
+                           <p>Annuler</p>
+                        </a>
+                        <a href="etudiants.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                           <i class="fa-solid fa-plus w-3"></i>
+                           <p>Ajouter l'étudiant</p>
+                        </a>
+                     </div>
+
+                  </form>
+
+               </div>
+
+               <div class=" mt-5 p-5 rounded-xl bg-red-50 border border-red-300">
+                  <div class="flex gap-4 md:gap-6 ">
+
+                     <!-- ICONE -->
+                     <div class="flex h-4 w-4 mb-2 text-md font-bold border mt-0.5 border-red-200 rounded-full bg-red-50 text-[#DD3333] ">
+                        <i class="fa-solid fa-star-of-life text-[5px] mx-auto mt-1.5  text-[#DD3333]"></i>
+                     </div>
+
+                     <!-- TEXTE -->
+                     <div class="space-y-2 text-[#DD3333]">
+                        <p class="text-[11px] md:text-[14px] font-medium ">
+                           Champs obligatoires
+                        </p>
+
+                     </div>
+                  </div>
+               </div>
+
+
+            </div>
+
+            <footer class="mt-8 bg-white p-6 border-t border-gray-300 hidden lg:block text-xs text-gray-500 shadow-lg ">
+               <p class=" w-[185px] mx-auto ">© 2026 E221 — Gestion scolaire</p>
+            </footer>
+         </div>
+
       </div>
 
+
+      <!-- MENU DU BAS -->
+      <div class="fixed bottom-0 left-0 z-50 w-full bg-white border-t border-gray-200 shadow-lg lg:hidden">
+
+         <div class="grid grid-cols-6 items-center py-2">
+
+            <a href="dashboard.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-house text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Dashboard</span>
+            </a>
+
+            <a href="filiere.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-book-open-reader text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Filières</span>
+            </a>
+
+            <a href="niveaux.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-layer-group text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Niveaux</span>
+            </a>
+
+            <a href="classes.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-chalkboard text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Classes</span>
+            </a>
+
+            <a href="etudiants.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-graduation-cap text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Étudiants</span>
+            </a>
+
+            <a href="statistiques.php"
+               class="flex flex-col items-center justify-center gap-1 py-2 text-gray-600 hover:text-[#DD3333] hover:bg-red-50">
+               <i class="fa-solid fa-chart-line text-lg"></i>
+               <span class="text-[9px] sm:text-xs">Statistiques</span>
+            </a>
+
+         </div>
+
+      </div>
    </div>
 </body>
 
