@@ -167,9 +167,9 @@
                   <!-- icone + TEXTE -->
                   <div class="flex px-5 gap-4 md:gap-5 lg:gap-6  items-center">
                      <!-- ICONE -->
-                        <div class="flex h-11 w-11 items-center justify-center border border-fuchsia-200 rounded-lg bg-fuchsia-50 text-fuchsia-600">
-                           <i class="fa-solid fa-chalkboard ml-1 text-sm w-5"></i>
-                        </div>
+                     <div class="flex h-11 w-11 items-center justify-center border border-fuchsia-200 rounded-lg bg-fuchsia-50 text-fuchsia-600">
+                        <i class="fa-solid fa-chalkboard ml-1 text-sm w-5"></i>
+                     </div>
 
                      <!-- TEXTE -->
                      <div class=" flex flex-col gap-1 ">
@@ -208,33 +208,33 @@
 
                         <!-- Select filiere -->
                         <div>
-                            <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Filière
-                           <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
-                        </label><br>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Filière
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
                            <select name="filière" id="" class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
-                           <option value="Tous les niveaux">Sélectionner une filière</option>
-                           <option value="1">Développement Web</option>
-                           <option value="2">Réseaux Informatiques</option>
-                           <option value="3">Designe graphique</option>
-                           <option value="4">Génie Logiciel</option>
-                           <option value="5">Marketing & Communication</option>
-                           <option value="6">Data analyst</option>
-                        </select>
+                              <option value="Tous les niveaux">Sélectionner une filière</option>
+                              <option value="1">Développement Web</option>
+                              <option value="2">Réseaux Informatiques</option>
+                              <option value="3">Designe graphique</option>
+                              <option value="4">Génie Logiciel</option>
+                              <option value="5">Marketing & Communication</option>
+                              <option value="6">Data analyst</option>
+                           </select>
                         </div>
 
                         <!-- Select niveaux -->
                         <div>
-                            <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Niveau
-                           <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
-                        </label><br>
-                        <select name="niveaux" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
-                           <option value="Tous les niveaux">Sélectionner un niveau</option>
-                           <option value="L1">L1</option>
-                           <option value="L1">L2</option>
-                           <option value="L1">L3</option>
-                           <option value="L1">M1</option>
-                           <option value="L1">M2</option>
-                        </select>
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Niveau
+                              <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
+                           </label><br>
+                           <select name="niveaux" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                              <option value="Tous les niveaux">Sélectionner un niveau</option>
+                              <option value="L1">L1</option>
+                              <option value="L1">L2</option>
+                              <option value="L1">L3</option>
+                              <option value="L1">M1</option>
+                              <option value="L1">M2</option>
+                           </select>
                         </div>
                      </div>
 

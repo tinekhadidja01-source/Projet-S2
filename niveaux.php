@@ -156,7 +156,7 @@
                      </h2>
 
                      <p class="mt-1 text-[10px] lg:text-[14px] text-gray-500">
-                        Consultez et gérez les niveaux  de formation.
+                        Consultez et gérez les niveaux de formation.
                      </p>
                   </div>
 
@@ -357,7 +357,7 @@
 
 
                   </div>
-                  
+
                   <!-- Cards 5 -->
                   <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
                      <!-- Icon + code -->
@@ -387,12 +387,12 @@
             </div>
 
             <!-- footer -->
-         <footer class="mt-8 bg-white p-6 border-t border-gray-300 hidden lg:block text-xs text-gray-500 shadow-lg ">
-            <p class=" w-[185px] mx-auto ">© 2026 E221 — Gestion scolaire</p>
-         </footer>
+            <footer class="mt-8 bg-white p-6 border-t border-gray-300 hidden lg:block text-xs text-gray-500 shadow-lg ">
+               <p class=" w-[185px] mx-auto ">© 2026 E221 — Gestion scolaire</p>
+            </footer>
          </div>
 
-         
+
       </div>
 
    </div>

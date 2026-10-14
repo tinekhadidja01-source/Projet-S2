@@ -158,7 +158,7 @@
                      </p>
                   </div>
 
-                 <a href="ajoutclasse.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                  <a href="ajoutclasse.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
                      <i class="fa-solid fa-plus w-3"></i>
                      <p>Ajouter une classe</p>
                   </a>
@@ -291,16 +291,16 @@
                   </select>
                </div>
 
-               
-                  <div>
-                     <h2 class="mt-5 text-[14px] lg:text-[18px] font-bold text-gray-900">
-                        Liste des classes
-                     </h2>
 
-                     <p class="mt-1 text-[11px] lg:text-[13px]  text-gray-500">
-                        6 classes enregistrées
-                     </p>
-                  </div>
+               <div>
+                  <h2 class="mt-5 text-[14px] lg:text-[18px] font-bold text-gray-900">
+                     Liste des classes
+                  </h2>
+
+                  <p class="mt-1 text-[11px] lg:text-[13px]  text-gray-500">
+                     6 classes enregistrées
+                  </p>
+               </div>
 
 
                <div class="mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -479,11 +479,11 @@
                      <div class="flex justify-between">
                         <div class="mb-4 flex flex-col">
 
-                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
 
-                           <i class="fa-solid fa-network-wired text-sm"></i>
+                              <i class="fa-solid fa-network-wired text-sm"></i>
 
-                        </div>
+                           </div>
 
                            <span class="mt-3 text-xs font-semibold text-[#DD3333]">
                               RES-INFO-L1-A
@@ -563,11 +563,11 @@
                      <div class="flex justify-between">
                         <div class="mb-4 flex flex-col">
 
-                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
 
-                           <i class="fa-solid fa-laptop-code text-sm"></i>
+                              <i class="fa-solid fa-laptop-code text-sm"></i>
 
-                        </div>
+                           </div>
 
                            <span class="mt-3 text-xs font-semibold text-[#DD3333]">
                               GENIE-LOG-L3-A
@@ -609,7 +609,7 @@
                            </p>
 
                            <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                             L3
+                              L3
                            </span>
                         </div>
 
@@ -730,11 +730,11 @@
                      <div class="flex justify-between">
                         <div class="mb-4 flex flex-col">
 
-                        <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
 
-                           <i class="fa-solid fa-network-wired text-sm"></i>
+                              <i class="fa-solid fa-network-wired text-sm"></i>
 
-                        </div>
+                           </div>
 
                            <span class="mt-3 text-xs font-semibold text-[#DD3333]">
                               RES-INFO-L2-A
@@ -765,7 +765,7 @@
                            </p>
 
                            <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                             Réseaux Informatiques
+                              Réseaux Informatiques
                            </span>
                         </div>
 

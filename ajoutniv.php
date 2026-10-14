@@ -141,21 +141,21 @@
 
          </div>
 
-                  <!-- CONTENU -->
+         <!-- CONTENU -->
          <div class="flex-1 min-h-0 overflow-y-auto ">
 
             <div class="w-[90%] mx-auto mt-8 mb-24 lg:mb-8">
                <!--TITRE -->
                <div>
-                 <div class="flex items-center gap-2">
-                 <a href="niveaux.php">
-                   <i class="fa-solid fa-chevron-left w-3 text-sm md:text-md hover:text-[#DD3333] cursor-pointer"></i>
-                 </a>
-                   <h2 class="text-[16px] lg:text-[23px] font-bold text-gray-900">
-                    Ajouter un niveau
-                  </h2>
+                  <div class="flex items-center gap-2">
+                     <a href="niveaux.php">
+                        <i class="fa-solid fa-chevron-left w-3 text-sm md:text-md hover:text-[#DD3333] cursor-pointer"></i>
+                     </a>
+                     <h2 class="text-[16px] lg:text-[23px] font-bold text-gray-900">
+                        Ajouter un niveau
+                     </h2>
 
-                 </div>
+                  </div>
                   <p class="mt-1 ml-5 text-[12px] lg:text-[14px] text-gray-500">
                      Ajoutez un nouveau niveau de formation à l'établissement.
                   </p>
@@ -166,9 +166,9 @@
                   <!-- icone + TEXTE -->
                   <div class="flex px-5 gap-4 md:gap-5 lg:gap-6  items-center">
                      <!-- ICONE -->
-                        <div class="flex h-11 w-11 items-center justify-center border border-purple-200 rounded-lg bg-purple-50 text-purple-600">
-                           <i class="fa-solid fa-layer-group text-md w-4"></i>
-                        </div>
+                     <div class="flex h-11 w-11 items-center justify-center border border-purple-200 rounded-lg bg-purple-50 text-purple-600">
+                        <i class="fa-solid fa-layer-group text-md w-4"></i>
+                     </div>
 
                      <!-- TEXTE -->
                      <div class=" flex flex-col gap-1 ">
@@ -193,8 +193,8 @@
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
                               type="text" placeholder="Ex : L1">
-                              <p class="text-[11px] mt-1 text-gray-600">Exemple : L1, L2, L3, M1 ou M2.</p>
-                              <br><br>
+                           <p class="text-[11px] mt-1 text-gray-600">Exemple : L1, L2, L3, M1 ou M2.</p>
+                           <br><br>
                         </div>
                         <!-- Nom filiere -->
                         <div>
@@ -204,8 +204,8 @@
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
                               type="text" placeholder="Ex : Licence 1">
-                              <p class="text-[11px] mt-1 text-gray-600">Indiquez le nom complet du niveau.</p>
-                              <br><br>
+                           <p class="text-[11px] mt-1 text-gray-600">Indiquez le nom complet du niveau.</p>
+                           <br><br>
                         </div>
                      </div>
 

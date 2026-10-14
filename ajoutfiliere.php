@@ -167,9 +167,9 @@
                   <!-- icone + TEXTE -->
                   <div class="flex px-5 gap-4 md:gap-5 lg:gap-6  items-center">
                      <!-- ICONE -->
-                        <div class="flex h-11 w-11 items-center justify-center border border-green-200  rounded-lg bg-green-50 text-green-600">
-                           <i class="fa-solid fa-book-open-reader text-sm w-5 ml-1.5"></i>
-                        </div>
+                     <div class="flex h-11 w-11 items-center justify-center border border-green-200  rounded-lg bg-green-50 text-green-600">
+                        <i class="fa-solid fa-book-open-reader text-sm w-5 ml-1.5"></i>
+                     </div>
 
                      <!-- TEXTE -->
                      <div class=" flex flex-col gap-1 ">
