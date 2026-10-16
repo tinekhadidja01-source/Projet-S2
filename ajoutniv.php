@@ -183,7 +183,7 @@
                   </div>
                   <div class="border border-gray-200 mt-5"></div>
 
-                  <form action="submit">
+                  <form action="niveaux.php" method="POST">
                      <div class="px-5 mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-1">
                         <!-- Code -->
                         <div>
@@ -192,7 +192,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : L1">
+                              type="text" name="code" placeholder="Ex : L1">
                            <p class="text-[11px] mt-1 text-gray-600">Exemple : L1, L2, L3, M1 ou M2.</p>
                            <br><br>
                         </div>
@@ -203,7 +203,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : Licence 1">
+                              type="text" name="libelle" placeholder="Ex : Licence 1">
                            <p class="text-[11px] mt-1 text-gray-600">Indiquez le nom complet du niveau.</p>
                            <br><br>
                         </div>
@@ -215,10 +215,10 @@
                            <i class="fa-solid fa-xmark w-3"></i>
                            <p>Annuler</p>
                         </a>
-                        <a href="niveaux.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                        <button class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md " name="ajout" type="submit">
                            <i class="fa-solid fa-plus w-3"></i>
                            <p>Ajouter le niveau</p>
-                        </a>
+                        </button>
                      </div>
 
                   </form>

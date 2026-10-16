@@ -185,7 +185,7 @@
                   </div>
                   <div class="border border-gray-200 mt-5"></div>
 
-                  <form action="submit">
+                  <form action="filiere.php" method="POST" enctype="multipart/form-data">
                      <div class="px-5 mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-1">
                         <!-- Code -->
                         <div>
@@ -194,16 +194,16 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : DEVWEB"><br><br>
+                              type="text" name="code" placeholder="Ex : DEVWEB"><br><br>
                         </div>
                         <!-- Nom filiere -->
                         <div>
-                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Nom de la filière
+                           <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Nom
                               <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : Développement web"><br><br>
+                              type="text" name="nom" placeholder="Ex : Développement web"><br><br>
                         </div>
                      </div>
 
@@ -213,7 +213,7 @@
                         </label><br>
                         <input
                            class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                           type="text" placeholder="Ex : M. Cheikh Diop"><br><br>
+                           type="text"  name="responsable" placeholder="Ex : M. Cheikh Diop"><br><br>
                      </div>
 
                      <!-- Image du responsable -->
@@ -221,7 +221,7 @@
                         <label class="font-medium text-[14px] lg:text-[15px] text-gray-800" for="">Image du responsable</label><br>
                         <div class="h-auto">
                            <div class=" mt-1 bg-white space-y-3   py-4 mx-auto border  rounded-xl border-dashed border-red-300 bg-red-50 text-center">
-                              <input name="photo" class=" cursor-pointer text-[12px] font-semibold text-[#DD3333]" type="file">
+                              <input name="photo"  name="photo" class=" cursor-pointer text-[12px] font-semibold text-[#DD3333]" type="file">
                            </div>
                         </div>
                      </div>
@@ -231,7 +231,7 @@
                         <div class=" py-3 h-full">
                            <label class="font-medium text-[14px] lg:text-[15px] text-gray-800">Description
                            </label><br>
-                           <textarea name="" id="" placeholder="Combien d'etudiants..."
+                           <textarea name="description" id="" placeholder="Combien d'etudiants..."
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-[100%] resize-none h-40  bg-white shadow-sm 
                               placeholder:text-left border border-gray-300 text-xs font-regular text-gray-500 rounded-xl p-2 "></textarea>
                         </div>
@@ -243,10 +243,10 @@
                            <i class="fa-solid fa-xmark w-3"></i>
                            <p>Annuler</p>
                         </a>
-                        <a href="filiere.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                        <button class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md " name="ajoutfil" type="submit">
                            <i class="fa-solid fa-plus w-3"></i>
                            <p>Ajouter la filière</p>
-                        </a>
+                        </button>
                      </div>
 
                   </form>

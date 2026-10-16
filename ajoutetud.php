@@ -1,3 +1,6 @@
+<?php 
+require_once'datas.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -185,7 +188,7 @@
                   </div>
                   <div class="border border-gray-200 mt-5"></div>
 
-                  <form action="submit">
+                  <form action="etudiants.php" method="POST">
                      <div class="px-5 mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-1">
                         <!-- Code -->
                         <div>
@@ -194,7 +197,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : E2210548"><br><br>
+                              type="text" name="matricule" placeholder="Ex : E2210548"><br><br>
                         </div>
                         <!-- Nom -->
                         <div>
@@ -203,7 +206,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : Diop"><br><br>
+                              type="text" name="nom" placeholder="Ex : Diop"><br><br>
                         </div>
 
                         <!-- Prénom -->
@@ -213,7 +216,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : Awa"><br><br>
+                              type="text" name="prenom" placeholder="Ex : Awa"><br><br>
                         </div>
 
                         <!-- Date de naissance -->
@@ -223,18 +226,18 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="date" placeholder="Ex : 12/06/03"><br><br>
+                              type="date" name="date de naissance" placeholder="Ex : 12/06/03"><br><br>
                         </div>
 
-                        <!-- Select filiere -->
+                        <!-- Select SEXE -->
                         <div>
                            <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Sexe
                               <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
                            </label><br>
-                           <select name="filière" id="" class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
-                              <option value="Tous les niveaux">Sélectionner un sexe</option>
-                              <option value="1">F</option>
-                              <option value="2">M</option>
+                           <select name="sexe" id="" class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                              <option value="Sélectionner un sexe">Sélectionner un sexe</option>
+                              <option value="F">F</option>
+                              <option value="M">M</option>
                            </select>
                         </div>
 
@@ -245,7 +248,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="tel" placeholder="Ex : 77 846 46 74"><br><br>
+                              type="tel" name="telephone" placeholder="Ex : 77 846 46 74"><br><br>
                         </div>
 
                      </div>
@@ -257,7 +260,7 @@
                         </label><br>
                         <input
                            class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                           type="text" placeholder="Ex : Dakar"> <br><br>
+                           type="text" name="adresse" placeholder="Ex : Dakar"> <br><br>
                      </div>
 
                      <!-- Select Classe -->
@@ -265,38 +268,13 @@
                         <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Classe
                            <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
                         </label><br>
-                        <select name="niveaux" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                        <select name="classe" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
                            <option value="Tous les niveaux">Sélectionner une classe</option>
-                           <option value="L1">L1 DEV-WEB</option>
-                           <option value="L1">L2 DEV-WEB</option>
-                           <option value="L1">L3 DEV-WEB</option>
-                           <option value="L1">M1 DEV-WEB</option>
-                           <option value="L1">M2 DEV-WEB</option>
-                           <option value="L1">L1 RES-INFO</option>
-                           <option value="L1">L2 RES-INFO</option>
-                           <option value="L1">L3 RES-INFO</option>
-                           <option value="L1">M1 RES-INFO</option>
-                           <option value="L1">M2 RES-INFO</option>
-                           <option value="L1">L1 GEN-LOG</option>
-                           <option value="L1">L2 GEN-LOG</option>
-                           <option value="L1">L3 GEN-LOG</option>
-                           <option value="L1">M1 GEN-LOG</option>
-                           <option value="L1">M2 GEN-LOG</option>
-                           <option value="L1">L1 DES-GRA</option>
-                           <option value="L1">L2 DES-GRA</option>
-                           <option value="L1">L3 DES-GRA</option>
-                           <option value="L1">M1 DES-GRA</option>
-                           <option value="L1">M2 DES-GRA</option>
-                           <option value="L1">L1 MAR-COM</option>
-                           <option value="L1">L2 MAR-COM</option>
-                           <option value="L1">L3 MAR-COM</option>
-                           <option value="L1">M1 MAR-COM</option>
-                           <option value="L1">M2 MAR-COM</option>
-                           <option value="L1">L1 DAT-ANA</option>
-                           <option value="L1">L2 DAT-ANA</option>
-                           <option value="L1">L3 DAT-ANA</option>
-                           <option value="L1">M1 DAT-ANA</option>
-                           <option value="L1">M2 DAT-ANA</option>
+                           <?php foreach ($_SESSION["classes"] as $c) : ?>
+                              <option value="<?=$c["code"] ?>">
+                                 <?=$c["code"] ?>
+                              </option>
+                           <?php endforeach ?>
                         </select>
                      </div>
 
@@ -306,10 +284,10 @@
                            <i class="fa-solid fa-xmark w-3"></i>
                            <p>Annuler</p>
                         </a>
-                        <a href="etudiants.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                        <button class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md " name="ajout" type="submit">
                            <i class="fa-solid fa-plus w-3"></i>
-                           <p>Ajouter l'étudiant</p>
-                        </a>
+                           <p>Ajouter l'etudiant</p>
+                        </button>
                      </div>
 
                   </form>

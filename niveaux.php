@@ -1,3 +1,29 @@
+<?php
+require_once 'datas.php';
+
+$licences=0;
+$masters=0;
+foreach($_SESSION["niveaux"] as $n){
+   if(str_starts_with($n["code"], "L")){
+      $licences++;
+   }elseif(str_starts_with($n["code"], "M")){
+      $masters++;
+   }
+}
+
+if (isset($_POST['ajout'])) {
+   $newniveau = [
+      "code" => strtoupper($_POST['code']),
+      "libelle" => $_POST['libelle'],
+   ];
+
+   // Ajout tableau $niveaux
+   $_SESSION["niveaux"][] = $newniveau;
+
+   header("Location: niveaux.php");
+   exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +42,7 @@
 
       <!-- Sidebar -->
 
-      <div class="fixed top-0 z-40 w-[20%] h-[552px] bg-[#DD3333] flex flex-col justify-between text-white hidden lg:block ">²
+      <div class="fixed top-0 z-40 w-[20%] h-[552px] bg-[#DD3333] flex flex-col justify-between text-white hidden lg:block ">
 
          <!-- LOGO -->
 
@@ -186,7 +212,7 @@
 
                            <div class="flex items-end gap-3">
                               <p class="text-lg lg:text-2xl font-bold">
-                                 05
+                                 <?= count($_SESSION["niveaux"]) ?>
                               </p>
                            </div>
 
@@ -212,7 +238,7 @@
 
                            <div class="flex">
                               <p class="text-lg lg:text-2xl font-bold">
-                                 03
+                                <?= $licences ?>
                               </p>
                            </div>
                         </div>
@@ -237,7 +263,7 @@
 
                            <div class="flex">
                               <p class="text-lg lg:text-2xl font-bold">
-                                 02
+                                 <?= $masters?>
                               </p>
                            </div>
                         </div>
@@ -258,130 +284,33 @@
 
                <!-- Les cards de niveaux -->
                <div class="mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+                  <?php foreach ($_SESSION["niveaux"] as $n):
+                  ?>
+                     <!-- Cards 1 -->
+                     <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
+                        <!-- Icon + code -->
+                        <div class="flex items-center justify-between">
 
-                  <!-- Cards 1 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex items-center justify-between">
+                           <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
 
-                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
+                              <i class="fa-solid fa-layer-group text-sm"></i>
 
-                           <i class="fa-solid fa-book-open-reader text-sm"></i>
+                           </div>
 
-                        </div>
+                           <div class="space-y-2 flex flex-col items-center">
+                              <span class="rounded-md bg-red-50 px-5 py-1 text-xs border border-red-500/20 font-bold text-[#DD3333]">
+                                 <?php echo $n['code'];?>
+                              </span>
+                              <p class="text-[12px] lg:text-[14px] font-medium uppercase text-gray-600">
+                                 <?php echo $n['libelle'];?>
+                              </p>
+                           </div>
 
-                        <div class="space-y-2 flex flex-col items-center">
-                           <span class="rounded-md bg-red-50 px-5 py-1 text-xs border border-red-500/20 font-bold text-[#DD3333]">
-                              L1
-                           </span>
-                           <p class="text-[12px] lg:text-[14px] font-medium uppercase text-gray-600">
-                              licence 1
-                           </p>
                         </div>
 
                      </div>
+                  <?php endforeach; ?>
 
-                  </div>
-
-                  <!-- Cards 2 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code + libelle -->
-                     <div class="flex items-center justify-between">
-
-                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                           <i class="fa-solid fa-book-open-reader text-sm"></i>
-
-                        </div>
-
-                        <div class="space-y-2 flex flex-col items-center">
-                           <span class="rounded-md bg-red-50 px-5 py-1 text-xs border border-red-500/20 font-bold text-[#DD3333]">
-                              L2
-                           </span>
-                           <p class="text-[12px] lg:text-[14px] font-medium uppercase text-gray-600">
-                              licence 2
-                           </p>
-                        </div>
-
-                     </div>
-
-
-                  </div>
-
-                  <!-- Cards 3 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex items-center justify-between">
-
-                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                           <i class="fa-solid fa-book-open-reader text-sm"></i>
-
-                        </div>
-
-                        <div class="space-y-2 flex flex-col items-center">
-                           <span class="rounded-md bg-red-50 px-5 py-1 text-xs border border-red-500/20 font-bold text-[#DD3333]">
-                              L3
-                           </span>
-                           <p class="text-[12px] lg:text-[14px] font-medium uppercase text-gray-600">
-                              licence 3
-                           </p>
-                        </div>
-
-                     </div>
-
-
-                  </div>
-
-                  <!-- Cards 4 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex items-center justify-between">
-
-                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                           <i class="fa-solid fa-book-open-reader text-sm"></i>
-
-                        </div>
-
-                        <div class="space-y-2 flex flex-col items-center">
-                           <span class="rounded-md bg-red-50 px-5 py-1 text-xs border border-red-500/20 font-bold text-[#DD3333]">
-                              M1
-                           </span>
-                           <p class="text-[12px] lg:text-[14px] font-medium uppercase text-gray-600">
-                              master 1
-                           </p>
-                        </div>
-
-                     </div>
-
-
-                  </div>
-
-                  <!-- Cards 5 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex items-center justify-between ">
-
-                        <div class="flex h-12 w-12 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                           <i class="fa-solid fa-book-open-reader text-sm"></i>
-
-                        </div>
-
-                        <div class="space-y-2 flex flex-col items-center">
-                           <span class="rounded-md bg-red-50 px-5 py-1 text-xs border border-red-500/20 font-bold text-[#DD3333]">
-                              M2
-                           </span>
-                           <p class="text-[12px] lg:text-[14px] font-medium uppercase text-gray-600">
-                              master 2
-                           </p>
-                        </div>
-
-                     </div>
-
-
-                  </div>
                </div>
 
             </div>

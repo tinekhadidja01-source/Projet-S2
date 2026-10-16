@@ -1,3 +1,15 @@
+<?php 
+require_once'datas.php';
+$garcons=0;
+$filles=0;
+foreach($_SESSION["etudiants"] as $e){
+   if($e["sexe"]==="M"){
+      $garcons++;
+   }elseif($e["sexe"]==="F"){
+      $filles++;
+   }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -175,7 +187,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              12
+                              <?= count($_SESSION["filieres"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -205,7 +217,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              5
+                              <?= count($_SESSION["niveaux"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -235,7 +247,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              24
+                              <?= count($_SESSION["classes"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -265,7 +277,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              548
+                             <?= count($_SESSION["etudiants"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -297,11 +309,12 @@
                            <div class="flex items-end gap-3">
 
                               <p class="text-xl lg:text-2xl font-bold">
-                                 290
+                                  <?= $garcons ?>
                               </p>
 
                               <span class="mb-1 text-xs text-gray-400">
-                                 52,9 %
+                                 <?= count($_SESSION["etudiants"])> 0
+                                ?round(($garcons / count($_SESSION["etudiants"])) *100, 1): 0?>%
                               </span>
 
                            </div>
@@ -335,11 +348,12 @@
                            <div class="flex items-end gap-3">
 
                               <p class="text-xl lg:text-2xl font-bold">
-                                 258
+                                 <?= $filles ?>
                               </p>
 
                               <span class="mb-1 text-xs text-gray-400">
-                                 41,7 %
+                                 <?= count($_SESSION["etudiants"])> 0
+                                ?round(($filles / count($_SESSION["etudiants"])) *100, 1): 0?>%
                               </span>
 
                            </div>
@@ -500,11 +514,11 @@
                <div class="mt-5 bg-white border border-gray-300 rounded-xl overflow-x-auto overflow-hidden">
                   <div class="px-5 py-4">
                      <h2 class=" text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        Étudiants par filière
+                        Étudiants par niveau
                      </h2>
 
                      <p class="mt-1 text-[11px] lg:text-[13px]  text-gray-500">
-                        Répartition des étudiants dans les différentes filières
+                        Répartition des étudiants dans les différents niveaux
                      </p>
                   </div>
                   <div class="border border-gray-100"></div>
@@ -592,7 +606,7 @@
                      <div class=" bg-red-50 rounded-xl flex justify-center p-14">
                         <div class=" w-[200px] h-[135px]">
                            <div class="bg-white w-[100px] h-[100px] text-[25px] lg:text-[30px] text-[#DD3333] text-center py-8 lg:py-7 font-bold rounded-full border border-gray-300 shadow-md mx-auto">
-                              548
+                              <?= count($_SESSION["etudiants"]) ?>
                            </div>
                            <p class="mt-3 text-center text-[12px] md:text-[14px] text-gray-600 font-semibold">Total des étudiants</p>
                         </div>

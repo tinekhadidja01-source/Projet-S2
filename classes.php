@@ -1,3 +1,23 @@
+<?php
+require_once 'datas.php';
+
+if (isset($_POST['ajout'])) {
+   $newclasse = [
+      "code" => strtoupper($_POST['code']),
+      "nom" => $_POST['nom'],
+      "filiere" => $_POST['filiere'],
+      "niveau"  => $_POST['niveau'],
+      "capacite"  => $_POST['capacite'],
+
+   ];
+
+   // Ajout tableau $classes
+   $_SESSION["classes"][] = $newclasse;
+
+   header("Location: classes.php");
+   exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -180,7 +200,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              6
+                             <?= count($_SESSION["classes"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -304,7 +324,9 @@
 
 
                <div class="mt-5 gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-
+                  <?php foreach ($_SESSION["classes"] as $c):
+                   $classe_icone=$icones_classes[$c['code']] ?? 'fa-graduation-cap'  
+                   ?>
                   <!-- Cards 1 -->
                   <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
                      <!-- Icon + code -->
@@ -313,12 +335,12 @@
 
                            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
 
-                              <i class="fa-solid fa-code text-sm"></i>
+                              <i class="fa-solid <?php echo $classe_icone;?> text-sm"></i>
 
                            </div>
 
                            <span class="mt-3 text-xs font-semibold text-[#DD3333]">
-                              DEV-WEB-L1-A
+                             <?php echo $c['code'];?>
                            </span>
 
                         </div>
@@ -331,7 +353,7 @@
 
                      <!-- Nom -->
                      <h3 class="text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        L1 Développement Web A
+                        <?php echo $c['nom'];?>
                      </h3>
 
                      <div class=" mt-3 border-t border-gray-300"></div>
@@ -346,7 +368,7 @@
                            </p>
 
                            <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              Développement Web
+                              <?php echo $c['filiere'];?>
                            </span>
                         </div>
 
@@ -357,7 +379,7 @@
                            </p>
 
                            <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                              L1
+                              <?php echo $c['niveau'];?>
                            </span>
                         </div>
 
@@ -368,7 +390,7 @@
                            </p>
 
                            <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              40 étudiants
+                              <?php echo $c['capacite'];?> étudiants
                            </span>
                         </div>
 
@@ -388,427 +410,7 @@
 
                      </div>
                   </div>
-
-                  <!-- Cards 2 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex justify-between">
-                        <div class="mb-4 flex flex-col">
-
-                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                              <i class="fa-solid fa-code text-sm"></i>
-
-                           </div>
-
-                           <span class="mt-3 text-xs font-semibold text-[#DD3333]">
-                              DEV-WEB-L2-A
-                           </span>
-
-                        </div>
-                        <div class=" flex flex-col gap-0.5 cursor-pointer">
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                        </div>
-                     </div>
-
-                     <!-- Nom -->
-                     <h3 class="text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        L2 Développement Web A
-                     </h3>
-
-                     <div class=" mt-3 border-t border-gray-300"></div>
-
-                     <!-- texte -->
-                     <div>
-
-                        <!-- filiere -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Filière
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              Développement Web
-                           </span>
-                        </div>
-
-                        <!-- niveau -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Niveau
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                              L2
-                           </span>
-                        </div>
-
-                        <!-- capacité -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Capacité
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              45 étudiants
-                           </span>
-                        </div>
-
-                     </div>
-
-
-                     <!-- Boutons -->
-                     <div class="mt-5 flex gap-2">
-
-                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition">
-                           Modifier
-                        </button>
-
-                        <button class="flex-1 rounded-lg border border-gray-300 bg-[#DD3333] hover:bg-[#870202] text-white  px-3 py-2 text-xs font-medium text-gray-700 transition text-white">
-                           Détails
-                        </button>
-
-                     </div>
-                  </div>
-
-                  <!-- Cards 3 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex justify-between">
-                        <div class="mb-4 flex flex-col">
-
-                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                              <i class="fa-solid fa-network-wired text-sm"></i>
-
-                           </div>
-
-                           <span class="mt-3 text-xs font-semibold text-[#DD3333]">
-                              RES-INFO-L1-A
-                           </span>
-
-                        </div>
-                        <div class=" flex flex-col gap-0.5 cursor-pointer">
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                        </div>
-                     </div>
-
-                     <!-- Nom -->
-                     <h3 class="text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        L1 Réseaux Informatiques A
-                     </h3>
-
-                     <div class=" mt-3 border-t border-gray-300"></div>
-
-                     <!-- texte -->
-                     <div>
-
-                        <!-- filiere -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Filière
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              Réseaux Informatiques
-                           </span>
-                        </div>
-
-                        <!-- niveau -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Niveau
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                              L1
-                           </span>
-                        </div>
-
-                        <!-- capacité -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Capacité
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              35 étudiants
-                           </span>
-                        </div>
-
-                     </div>
-
-
-                     <!-- Boutons -->
-                     <div class="mt-5 flex gap-2">
-
-                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition">
-                           Modifier
-                        </button>
-
-                        <button class="flex-1 rounded-lg border border-gray-300 bg-[#DD3333] hover:bg-[#870202] text-white  px-3 py-2 text-xs font-medium text-gray-700 transition text-white">
-                           Détails
-                        </button>
-
-                     </div>
-                  </div>
-
-                  <!-- Cards 4 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex justify-between">
-                        <div class="mb-4 flex flex-col">
-
-                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                              <i class="fa-solid fa-laptop-code text-sm"></i>
-
-                           </div>
-
-                           <span class="mt-3 text-xs font-semibold text-[#DD3333]">
-                              GENIE-LOG-L3-A
-                           </span>
-
-                        </div>
-                        <div class=" flex flex-col gap-0.5 cursor-pointer">
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                        </div>
-                     </div>
-
-                     <!-- Nom -->
-                     <h3 class="text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        L3 Génie Logiciel A
-                     </h3>
-
-                     <div class=" mt-3 border-t border-gray-300"></div>
-
-                     <!-- texte -->
-                     <div>
-
-                        <!-- filiere -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Filière
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              Génie Logiciel
-                           </span>
-                        </div>
-
-                        <!-- niveau -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Niveau
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                              L3
-                           </span>
-                        </div>
-
-                        <!-- capacité -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Capacité
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              30 étudiants
-                           </span>
-                        </div>
-
-                     </div>
-
-
-                     <!-- Boutons -->
-                     <div class="mt-5 flex gap-2">
-
-                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition">
-                           Modifier
-                        </button>
-
-                        <button class="flex-1 rounded-lg border border-gray-300 bg-[#DD3333] hover:bg-[#870202] text-white  px-3 py-2 text-xs font-medium text-gray-700 transition text-white">
-                           Détails
-                        </button>
-
-                     </div>
-                  </div>
-
-                  <!-- Cards 5 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex justify-between">
-                        <div class="mb-4 flex flex-col">
-
-                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                              <i class="fa-solid fa-code text-sm"></i>
-
-                           </div>
-
-                           <span class="mt-3 text-xs font-semibold text-[#DD3333]">
-                              DEV-WEB-L2-B
-                           </span>
-
-                        </div>
-                        <div class=" flex flex-col gap-0.5 cursor-pointer">
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                        </div>
-                     </div>
-
-                     <!-- Nom -->
-                     <h3 class="text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        L2 Développement Web B
-                     </h3>
-
-                     <div class=" mt-3 border-t border-gray-300"></div>
-
-                     <!-- texte -->
-                     <div>
-
-                        <!-- filiere -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Filière
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              Développement Web
-                           </span>
-                        </div>
-
-                        <!-- niveau -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Niveau
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                              L2
-                           </span>
-                        </div>
-
-                        <!-- capacité -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Capacité
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              38 étudiants
-                           </span>
-                        </div>
-
-                     </div>
-
-                     <!-- Boutons -->
-                     <div class="mt-5 flex gap-2">
-
-                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition">
-                           Modifier
-                        </button>
-
-                        <button class="flex-1 rounded-lg border border-gray-300 bg-[#DD3333] hover:bg-[#870202] text-white  px-3 py-2 text-xs font-medium text-gray-700 transition text-white">
-                           Détails
-                        </button>
-
-                     </div>
-                  </div>
-
-                  <!-- Cards 6 -->
-                  <div class="rounded-xl border border-gray-300 bg-white p-5 shadow-sm ">
-                     <!-- Icon + code -->
-                     <div class="flex justify-between">
-                        <div class="mb-4 flex flex-col">
-
-                           <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-red-50 border border-red-500/20 text-[#DD3333]">
-
-                              <i class="fa-solid fa-network-wired text-sm"></i>
-
-                           </div>
-
-                           <span class="mt-3 text-xs font-semibold text-[#DD3333]">
-                              RES-INFO-L2-A
-                           </span>
-
-                        </div>
-                        <div class=" flex flex-col gap-0.5 cursor-pointer">
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                           <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                        </div>
-                     </div>
-
-                     <!-- Nom -->
-                     <h3 class="text-[14px] lg:text-[16px] font-bold text-gray-900">
-                        L2 Réseaux Informatiques A
-                     </h3>
-
-                     <div class=" mt-3 border-t border-gray-300"></div>
-
-                     <!-- texte -->
-                     <div>
-
-                        <!-- filiere -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Filière
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              Réseaux Informatiques
-                           </span>
-                        </div>
-
-                        <!-- niveau -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Niveau
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold bg-red-50 px-2 border border-red-500/20 rounded-sm text-[#DD3333]">
-                              L2
-                           </span>
-                        </div>
-
-                        <!-- capacité -->
-                        <div class="mt-4 flex justify-between items-center">
-                           <p class=" text-[10px] lg:text-[12px] font-medium uppercase text-gray-400">
-                              Capacité
-                           </p>
-
-                           <span class=" text-[10px] lg:text-[12px] font-bold text-gray-700">
-                              42 étudiants
-                           </span>
-                        </div>
-
-                     </div>
-
-
-                     <!-- Boutons -->
-                     <div class="mt-5 flex gap-2">
-
-                        <button class="flex-1 rounded-lg border border-gray-300 hover:border-red-600/40 hover:text-[#DD3333] px-3 py-2 text-xs font-medium text-gray-700 transition">
-                           Modifier
-                        </button>
-
-                        <button class="flex-1 rounded-lg border border-gray-300 bg-[#DD3333] hover:bg-[#870202] text-white  px-3 py-2 text-xs font-medium text-gray-700 transition text-white">
-                           Détails
-                        </button>
-
-                     </div>
-                  </div>
-
-
+                  <?php endforeach; ?>
                </div>
             </div>
 

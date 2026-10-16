@@ -1,3 +1,41 @@
+<?php
+require_once 'datas.php';
+
+$garcons=0;
+$filles=0;
+foreach($_SESSION["etudiants"] as $e){
+   if($e["sexe"]==="M"){
+      $garcons++;
+   }elseif($e["sexe"]==="F"){
+      $filles++;
+   }
+}
+
+if (isset($_POST['ajout'])) {
+   $classechoisie= getClasseById($_POST["classe"]);
+
+   if($classechoisie !== null){
+        $newetudiant = [
+      "matricule" => strtoupper($_POST['matricule']),
+      "nom" => $_POST['nom'],
+      "prenom" => $_POST['prenom'],
+      "date de naissance"  => $_POST['date de naissance'],
+      "sexe"  => $_POST['sexe'],
+      "telephone"  => $_POST['telephone'],
+      "adresse"  => $_POST['adresse'],
+      "classe"  => $classechoisie["code"],
+   ]; 
+
+      // Ajout tableau $etudiants
+   $_SESSION["etudiants"][] = $newetudiant;
+
+   }
+
+   header("Location: etudiants.php");
+   exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -185,7 +223,7 @@
 
                            <div class="flex items-end gap-3">
                               <p class="text-lg lg:text-2xl font-bold">
-                                 548
+                                 <?= count($_SESSION["etudiants"]) ?>
                               </p>
                            </div>
 
@@ -211,7 +249,7 @@
 
                            <div class="flex">
                               <p class="text-lg lg:text-2xl font-bold">
-                                 290
+                                 <?= $garcons ?>
                               </p>
                            </div>
                         </div>
@@ -236,7 +274,7 @@
 
                            <div class="flex">
                               <p class="text-lg lg:text-2xl font-bold">
-                                 258
+                                <?= $filles ?>
                               </p>
                            </div>
                         </div>
@@ -328,43 +366,51 @@
                      </thead>
 
                      <tbody class="divide-y divide-gray-100">
-
+                        <?php
+                        $derniersetudiants=array_slice(
+                           array_reverse($_SESSION["etudiants"]),
+                           0,
+                           5
+                        );
+                        foreach($derniersetudiants as $e):
+                           $classe = getClasseById($e["classe"]);
+                        ?>
                         <!-- LIGNE 1 -->
                         <tr class=" text-[10px] lg:text-[13px] font-bold text-left items-center hover:bg-red-50">
 
                            <td class="px-6 py-1 lg:py-4">
 
                               <span class=" text-gray-900">
-                                 E2210548
+                                <?= htmlspecialchars($e["matricule"]) ?>
                               </span>
 
                            </td>
 
                            <td class="px-4 py-2 lg:py-4 font-medium text-gray-900">
-                              Diop
+                              <?= $e["nom"] ?>
                            </td>
 
                            <td class="px-2 md:px-6 py-2 lg:py-4  font-medium text-gray-600">
-                              Awa
+                             <?= $e["prenom"] ?>
                            </td>
 
                            <td class="px-4 lg:px-6 py-2 lg:py-4">
                               <span class="rounded-md bg-red-50 px-3 py-1 lg:py-2 font-medium text-[#DD3333]">
-                                 F
+                                 <?= $e["sexe"] ?>
                               </span>
                            </td>
 
-                           <td class="px-1 lg:px-6 py-2 lg:py-4   font-medium text-gray-600">
-                              L2 DEV-WEB
+                           <td class="px-1 lg:px-6 py-2 lg:py-4 whitespace-nowrap   font-medium text-gray-600">
+                              <?= htmlspecialchars($classe["code"]) ?>
                            </td>
 
                            <td class=" whitespace-nowrap px-3 md:px-4 lg:px-6 py-2 lg:py-4 text-left  font-medium text-gray-600">
-                              Développement Web
+                              <?= htmlspecialchars($classe["filiere"] ?? "") ?>
                            </td>
 
                            <td class="px-1 md:px-6 py-2 lg:py-4 text-right">
                               <span class="rounded-lg bg-gray-100 px-2.5 py-1 lg:py-2 font-semibold font-medium text-gray-600">
-                                 L2
+                                <?= htmlspecialchars($classe["niveau"] ?? "") ?>
                               </span>
                            </td>
 
@@ -378,207 +424,7 @@
                            </td>
 
                         </tr>
-
-                        <!-- LIGNE 2 -->
-                        <tr class=" text-[10px] lg:text-[13px] font-bold items-center hover:bg-red-50">
-
-                           <td class="px-6 py-1 lg:py-4">
-
-                              <span class=" text-gray-900">
-                                 E2210547
-                              </span>
-
-                           </td>
-
-                           <td class="px-4 py-2 lg:py-4 font-medium text-gray-900">
-                              Fall
-                           </td>
-
-                           <td class="px-2 md:px-6 py-2 lg:py-4  font-medium text-gray-600">
-                              Aliou
-                           </td>
-
-                           <td class="px-4 lg:px-6 py-2 lg:py-4">
-                              <span class="rounded-md bg-blue-50 px-2.5 py-1 lg:py-2 font-medium text-[#737DEB]">
-                                 M
-                              </span>
-                           </td>
-
-                           <td class="px-1 lg:px-6 py-2 lg:py-4 font-medium text-gray-600">
-                              L1 RES-INFO
-                           </td>
-
-                           <td class="whitespace-nowrap px-3 md:px-4 lg:px-6 py-2 lg:py-4 text-left  font-medium text-gray-600">
-                              Réseaux et Systèmes
-                           </td>
-
-                           <td class="px-1 md:px-6 py-2 lg:py-4 text-right">
-                              <span class="rounded-lg bg-gray-100 px-2.5 py-1 lg:py-2   font-semibold font-medium text-gray-600">
-                                 L1
-                              </span>
-                           </td>
-
-                           <td class="px-6 py-1 lg:py-4 text-right ">
-                              <div class=" flex gap-0.5 cursor-pointer  w-full justify-end">
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                              </div>
-
-                           </td>
-
-                        </tr>
-
-                        <!-- LIGNE 3 -->
-                        <tr class=" text-[10px] lg:text-[13px] font-bold items-center hover:bg-red-50">
-
-                           <td class="px-6 py-1 lg:py-4">
-
-                              <span class=" text-gray-900">
-                                 E2210546
-                              </span>
-
-                           </td>
-
-                           <td class="px-4 py-2 lg:py-4 font-medium text-gray-900">
-                              Ba
-                           </td>
-
-                           <td class="px-2 md:px-6 py-2 lg:py-4  font-medium text-gray-600">
-                              Fatou
-                           </td>
-
-                           <td class="px-4 lg:px-6 py-2 lg:py-4">
-                              <span class="rounded-md bg-red-50 px-3 py-1 lg:py-2 font-medium text-[#DD3333]">
-                                 F
-                              </span>
-                           </td>
-
-                           <td class="px-1 lg:px-6 py-2 lg:py-4 font-medium text-gray-600">
-                              L1 DEV-WEB
-                           </td>
-
-                           <td class="whitespace-nowrap px-3 md:px-4 lg:px-6 py-2 lg:py-4 text-left  font-medium text-gray-600">
-                              Développement Web
-                           </td>
-
-                           <td class="px-1 md:px-6 py-2 lg:py-4 text-right">
-                              <span class="rounded-lg bg-gray-100 px-2.5 py-1 lg:py-2   font-semibold font-medium text-gray-600">
-                                 L1
-                              </span>
-                           </td>
-
-                           <td class="px-6 py-1 lg:py-4 text-right ">
-                              <div class=" flex gap-0.5 cursor-pointer  w-full justify-end">
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                              </div>
-
-                           </td>
-
-                        </tr>
-
-                        <!-- LIGNE 4 -->
-                        <tr class=" text-[10px] lg:text-[13px] font-bold items-center hover:bg-red-50">
-
-                           <td class="px-6 py-1 lg:py-4">
-
-                              <span class=" text-gray-900">
-                                 E2210545
-                              </span>
-
-                           </td>
-
-                           <td class="px-4 py-2 lg:py-4 font-medium text-gray-900">
-                              Kane
-                           </td>
-
-                           <td class="px-2 md:px-6 py-2 lg:py-4  font-medium text-gray-600">
-                              Moussa
-                           </td>
-
-                           <td class="px-4 lg:px-6 py-2 lg:py-4">
-                              <span class="rounded-md bg-blue-50 px-2.5 py-1 lg:py-2 font-medium text-[#737DEB]">
-                                 M
-                              </span>
-                           </td>
-
-                           <td class="px-1 lg:px-6 py-2 lg:py-4 font-medium text-gray-600">
-                              L3 GEN-LOG
-                           </td>
-
-                           <td class="whitespace-nowrap px-3 md:px-4 lg:px-6 py-2 lg:py-4 text-left  font-medium text-gray-600">
-                              Génie Logiciel
-                           </td>
-
-                           <td class="px-1 md:px-6 py-2 lg:py-4 text-right">
-                              <span class="rounded-lg bg-gray-100 px-2.5 py-1 lg:py-2  font-semibold font-medium text-gray-600">
-                                 L3
-                              </span>
-                           </td>
-
-                           <td class="px-6 py-1 lg:py-4 text-right ">
-                              <div class=" flex gap-0.5 cursor-pointer  w-full justify-end">
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                              </div>
-
-                           </td>
-
-                        </tr>
-
-                        <!-- LIGNE 5 -->
-                        <tr class=" text-[10px] lg:text-[13px] font-bold items-center hover:bg-red-50">
-
-                           <td class="px-6 py-1 lg:py-4">
-
-                              <span class=" text-gray-900">
-                                 E2210544
-                              </span>
-
-                           </td>
-
-                           <td class="px-4 py-2 lg:py-4 font-medium text-gray-900">
-                              Sow
-                           </td>
-
-                           <td class="px-2 md:px-6 py-2 lg:py-4  font-medium text-gray-600">
-                              Mariama
-                           </td>
-
-                           <td class="px-4 lg:px-6 py-2 lg:py-4">
-                              <span class="rounded-md bg-red-50  px-3 py-1 lg:py-2 font-medium text-[#DD3333]">
-                                 F
-                              </span>
-                           </td>
-
-                           <td class="px-1 lg:px-6 py-2 lg:py-4 font-medium text-gray-600">
-                              L2 DEV-WEB
-                           </td>
-
-                           <td class="whitespace-nowrap px-3 md:px-4 lg:px-6 py-2 lg:py-4 text-left  font-medium text-gray-600">
-                              Développement Web
-                           </td>
-
-                           <td class="px-1 md:px-6 py-2 lg:py-4 text-right">
-                              <span class="rounded-lg bg-gray-100 px-2.5 py-1 lg:py-2  font-semibold font-medium text-gray-600">
-                                 L2
-                              </span>
-                           </td>
-
-                           <td class="px-6 py-1 lg:py-4 text-right ">
-                              <div class=" flex gap-0.5 cursor-pointer  w-full justify-end">
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333] "></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                                 <div class="w-1 h-1 rounded-full bg-gray-400 hover:bg-[#DD3333]"></div>
-                              </div>
-
-                           </td>
-
-                        </tr>
-
+                        <?php endforeach?>
                      </tbody>
                   </table>
 

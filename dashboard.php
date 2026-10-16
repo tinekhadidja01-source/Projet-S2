@@ -1,3 +1,15 @@
+<?php 
+require_once'datas.php';
+$garcons=0;
+$filles=0;
+foreach($_SESSION["etudiants"] as $e){
+   if($e["sexe"]==="M"){
+      $garcons++;
+   }elseif($e["sexe"]==="F"){
+      $filles++;
+   }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -176,7 +188,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              12
+                              <?= count($_SESSION["filieres"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -207,7 +219,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              5
+                              <?= count($_SESSION["niveaux"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -238,7 +250,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              24
+                              <?= count($_SESSION["classes"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -269,7 +281,7 @@
                            </p>
 
                            <p class="mt-2 text-xl lg:text-2xl font-bold text-gray-900">
-                              548
+                             <?= count($_SESSION["etudiants"]) ?>
                            </p>
 
                            <p class="mt-1 text-xs text-gray-400">
@@ -295,7 +307,7 @@
                   <!-- GARÇONS -->
                   <div class=" rounded-xl border border-gray-300 bg-white p-4 shadow-sm">
 
-                     <div class="flex gap-8 items-center justify-center">
+                     <div class="flex gap-8 items-center justify-between lg:justify-center">
                         <!-- ICONE -->
                         <div class="flex h-11 w-11 items-center justify-center border border-blue-200 rounded-lg bg-blue-50 text-[#737DEB]">
                            <i class="fa-solid fa-mars text-lg w-4"></i>
@@ -310,11 +322,12 @@
                            <div class="flex items-end gap-3">
 
                               <p class="text-xl lg:text-2xl font-bold">
-                                 290
+                                 <?= $garcons ?>
                               </p>
 
                               <span class="mb-1 text-xs text-gray-400">
-                                 52,9 %
+                                <?= count($_SESSION["etudiants"])> 0
+                                ?round(($garcons / count($_SESSION["etudiants"])) *100, 1): 0?>%
                               </span>
 
                            </div>
@@ -326,7 +339,7 @@
                   <!-- FILLES -->
                   <div class=" rounded-xl border border-gray-300 bg-white  p-4 shadow-sm">
 
-                     <div class="flex gap-8  items-center justify-center">
+                     <div class="flex gap-8  items-center justify-between lg:justify-center">
 
                         <!-- ICONE -->
                         <div class="flex h-11 w-11 items-center border border-rose-200 justify-center rounded-lg bg-rose-50 text-rose-600 ">
@@ -341,11 +354,12 @@
 
                            <div class="flex items-end gap-3">
                               <p class="text-xl lg:text-2xl font-bold">
-                                 258
+                                 <?= $filles ?>
                               </p>
 
                               <span class="mb-1 text-xs text-gray-400">
-                                 41,7 %
+                                  <?= count($_SESSION["etudiants"])> 0
+                                ?round(($filles / count($_SESSION["etudiants"])) *100, 1): 0?>%
                               </span>
                            </div>
 
@@ -391,7 +405,7 @@
 
                         <!-- barre rouge -->
                         <div class="mt-1 rounded-full h-2 bg-gray-100">
-                           <div class="rounded-full h-2 bg-[#DD3333]"></div>
+                           <div class="rounded-full h-2 bg-[#DD3333]" ></div>
                         </div>
                      </div>
 

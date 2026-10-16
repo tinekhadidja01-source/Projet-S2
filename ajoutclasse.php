@@ -185,7 +185,7 @@
                   </div>
                   <div class="border border-gray-200 mt-5"></div>
 
-                  <form action="submit">
+                  <form action="classes.php" method="POST">
                      <div class="px-5 mt-8 grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-1">
                         <!-- Code -->
                         <div>
@@ -194,7 +194,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : DEV-WEB-L1-A"><br><br>
+                              type="text" name="code" placeholder="Ex : DEV-WEB-L1-A"><br><br>
                         </div>
                         <!-- Nom -->
                         <div>
@@ -203,7 +203,7 @@
                            </label><br>
                            <input
                               class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                              type="text" placeholder="Ex : L1 Développement Web A"><br><br>
+                              type="text" name="nom" placeholder="Ex : L1 Développement Web A"><br><br>
                         </div>
 
                         <!-- Select filiere -->
@@ -211,14 +211,14 @@
                            <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Filière
                               <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
                            </label><br>
-                           <select name="filière" id="" class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                           <select name="filiere" id="" class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
                               <option value="Tous les niveaux">Sélectionner une filière</option>
-                              <option value="1">Développement Web</option>
-                              <option value="2">Réseaux Informatiques</option>
-                              <option value="3">Designe graphique</option>
-                              <option value="4">Génie Logiciel</option>
-                              <option value="5">Marketing & Communication</option>
-                              <option value="6">Data analyst</option>
+                              <option value="Développement Web">Développement Web</option>
+                              <option value="Réseaux Informatiques">Réseaux Informatiques</option>
+                              <option value="Designe graphique">Designe graphique</option>
+                              <option value="Génie Logiciel">Génie Logiciel</option>
+                              <option value="Marketing & Communication">Marketing & Communication</option>
+                              <option value="Data analyst">Data analyst</option>
                            </select>
                         </div>
 
@@ -227,7 +227,7 @@
                            <label for="" class="font-medium text-[14px] lg:text-[15px] text-gray-800">Niveau
                               <i class="fa-solid fa-star-of-life text-[5px] align-super  text-[#DD3333]"></i>
                            </label><br>
-                           <select name="niveaux" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
+                           <select name="niveau" id="" class="mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-medium text-gray-800  rounded-xl">
                               <option value="Tous les niveaux">Sélectionner un niveau</option>
                               <option value="L1">L1</option>
                               <option value="L1">L2</option>
@@ -245,7 +245,7 @@
                         </label><br>
                         <input
                            class=" mt-1 focus:outline focus:outline-red-600 focus:ring-0 focus:border-none w-full p-3 bg-white shadow-sm  border border-gray-300 text-xs font-regular  rounded-xl "
-                           type="text" placeholder="Ex : 40"> <br><br>
+                           type="number" name="capacite" placeholder="Ex : 40"> <br><br>
                      </div>
 
                      <!-- Buttons -->
@@ -254,10 +254,10 @@
                            <i class="fa-solid fa-xmark w-3"></i>
                            <p>Annuler</p>
                         </a>
-                        <a href="classes.php" class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md">
+                        <button class="bg-[#DD3333] hover:bg-[#870202] whitespace-nowrap text-white flex items-center text-[9px] md:text-[12px] lg:text-[14px] gap-1 md:gap-2 lg:gap-3 font-semibold px-3 lg:px-6 py-1 md:py-2 lg:py-2 rounded-md " name="ajout" type="submit">
                            <i class="fa-solid fa-plus w-3"></i>
                            <p>Ajouter la classe</p>
-                        </a>
+                        </button>
                      </div>
 
                   </form>
