@@ -381,7 +381,7 @@ if (isset($_POST['ajout'])) {
                            <td class="px-6 py-1 lg:py-4">
 
                               <span class=" text-gray-900">
-                                <?= htmlspecialchars($e["matricule"]) ?>
+                                <?= $e["matricule"]?>
                               </span>
 
                            </td>
