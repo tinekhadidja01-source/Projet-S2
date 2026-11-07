@@ -391,6 +391,7 @@ foreach($_SESSION["etudiants"] as $e){
                      </div>
                   </div>
 
+                  
                   <!-- les barres + textes -->
                   <div class=" mt-5 flex flex-col">
 
