@@ -45,7 +45,7 @@ foreach($_SESSION["etudiants"] as $e){
 
             <!-- menu -->
             <div class=" space-y-2 mt-2">
-               <a href="dashboard.php"
+               <a href="index.php"
                   class=" flex px-6 py-2 gap-4 items-center rounded-sm text-[#DD3333] bg-white text-sm font-regular border border-white">
                   <i class="fa-solid fa-house text-sm w-5"></i>
                   <span> Dashboard</span>
@@ -475,7 +475,7 @@ foreach($_SESSION["etudiants"] as $e){
 
             <div class="grid grid-cols-6 items-center py-2">
 
-               <a href="dashboard.php"
+               <a href="index.php"
                   class="flex flex-col items-center justify-center gap-1 py-2 text-[#DD3333] hover:bg-red-50">
                   <i class="fa-solid fa-house text-lg"></i>
                   <span class="text-[9px] sm:text-xs">Dashboard</span>
